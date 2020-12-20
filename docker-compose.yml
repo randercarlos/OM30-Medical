@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  app:
+    image: rcarlos/php7.4:codeigniter4
+    container_name: app
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/myapp
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: postgres:10
+    container_name: postgresql
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: om30-medical
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: dev
+
+volumes:
+  postgresql_data:
