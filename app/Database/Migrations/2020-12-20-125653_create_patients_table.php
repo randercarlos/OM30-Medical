@@ -6,13 +6,16 @@ class CreatePatientsTable extends Migration
 {
 	public function up()
 	{
-        $this->forge->addPrimaryKey('id');
+        // $this->forge->addPrimaryKey('id');
+        $this->forge->addField('id');
         $this->forge->addField([
+
             'fullname' => ['type' => 'VARCHAR','constraint' => 255],
             'mother_fullname' => ['type' => 'VARCHAR','constraint' => 255],
             'photo' => ['type' => 'VARCHAR','constraint' => 255, 'null' => true],
             'birthday' => ['type' => 'DATETIME'],
             'cpf' => ['type' => 'VARCHAR', 'constraint' => 14],
+            'cns' => ['type' => 'VARCHAR', 'constraint' => 15],
             'address' => ['type' => 'VARCHAR', 'constraint' => 255],
             'number' => ['type' => 'VARCHAR', 'constraint' => 10, 'null' => true],
             'complement' => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => true],

@@ -1,0 +1,232 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.altura{
+    height: 35px;
+}
+
+.logo{
+    padding-top: 2.5%;
+}
+
+.content-wrapper {
+    margin-top: 40px;
+    min-height: 680px !important;
+    padding-bottom: 60px;
+}
+
+.branco{
+    color: #fff;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cell-middle {
+    vertical-align: middle;
+}
+
+.back{
+    background-color: #222322;
+    margin-top: -22px;
+}
+.titulo{
+    font-size: 2em;
+    font-family: verdana, sans-serif;
+    color: #ffffff;
+}
+
+footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #8a1818;
+    margin-bottom: -15px;
+}
+
+footer a, footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.btn-black {
+    background: #444;
+    color: #fff;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.preview_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+    background-color: #F8F8FF;
+    border: 1px solid #DCDCDC;
+    height: 220px;
+}
+
+#preview-img {
+    width: 100px;
+    height: 80px;
+}
+
+.opcionais_grupos {
+    padding: 5px;
+    width: 300px;
+    display: block;
+    float: left;
+}
+
+/* Adiciona um asterisco vermelho após o label nos campos obrigatórios */
+.form-group label:after, .col-md-2 label.required:after {
+  content:"*";
+  color:red;
+  margin-left: 5px;
+}
+
+.no-required label:after {
+  content:"";
+}
+
+button i.fa, a.btn i.fa  {
+    /*padding-right: 3px;*/
+}
+
+/*Select2 ReadOnly Start*/
+select[readonly].select2-hidden-accessible + .select2-container {
+    pointer-events: none;
+    touch-action: none;
+}
+
+select[readonly].select2-hidden-accessible + .select2-container .select2-selection {
+    background: #eee;
+    box-shadow: none;
+}
+
+select[readonly].select2-hidden-accessible + .select2-container .select2-selection__arrow, select[readonly].select2-hidden-accessible + .select2-container .select2-selection__clear {
+    display: none;
+}
+
+/*Select2 ReadOnly End*/
+
+
+/************************************* TABS **************************************/
+.nav a:hover, .tab a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.nav-tabs {
+    border-bottom: 2px solid #e8e8e8;
+}
+.nav-tabs li a {
+    display: block;
+    padding: 10px 20px;
+    margin: 0 5px 1px 0;
+    background: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    z-index: 2;
+    position: relative;
+    transition:all 0.3s ease 0s;
+}
+
+.nav-tabs li a:hover, .nav-tabs li.active a{
+    color: #198df8;
+    border: 0;
+}
+
+.nav-tabs li.active a:before{
+    color: #198df8;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+}
+
+.nav-tabs li.active a:after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #198df8;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+}
+
+.tab-content {
+    padding: 30px 20px 20px;
+    margin-top: 0;
+    background: #fff;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 0 0 5px 5px;
+}
+
+@media only screen and (max-width: 479px){
+    .nav-tabs li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-tabs li.active a:before{
+        content: "\f105";
+        bottom: 15%;
+        left: 0;
+        right: auto;
+    }
+}
+/************************************* FIM TABS **************************************/
+
+
+/************************************* UPLOAD **************************************/
+#upload-area {
+    background: #fff;
+    border: 3px dashed #607d8b;
+    border-radius: 2px;
+    color: #455a64;
+    font-size: 14px;
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+    -webkit-transition: background .15s linear,border .15s linear,color .15s linear,opacity .15s linear;
+    transition: background .15s linear,border .15s linear,color .15s linear,opacity .15s linear;
+}
+/************************************* FIM UPLOAD **************************************/

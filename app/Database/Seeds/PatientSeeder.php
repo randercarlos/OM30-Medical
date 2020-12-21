@@ -15,6 +15,7 @@ class PatientSeeder extends Seeder
                 'mother_fullname' => $faker->name('female'),
                 'birthday' => $faker->date('Y-m-d', '-10 years'),
                 'cpf' => $faker->cpf,
+                'cns' => mt_rand(11111111111111 , 999999999999999),
                 'address' => $faker->streetName,
                 'number' => $faker->buildingNumber,
                 'complement' => $faker->secondaryAddress,
