@@ -20,7 +20,11 @@ RUN apt-get -y install --fix-missing zip unzip
 RUN apt-get -y install --fix-missing git
 
 # Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Install composer
+ENV COMPOSER_HOME /composer
+ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
+ENV COMPOSER_ALLOW_SUPERUSER 1
+RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 
 COPY  . /usr/src/myapp
 WORKDIR /usr/src/myapp

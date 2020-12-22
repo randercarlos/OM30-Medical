@@ -1,64 +1,110 @@
-# CodeIgniter 4 Application Starter
+<h4 align="center">
+  🚀 OM30-Medical - Gerenciamento de Pacientes - Teste técnico
+</h4>
 
-## What is CodeIgniter?
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
+</p>
 
-This repository holds a composer-installable app starter.
-It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+<p align="center">
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+<br>
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
+<p align="center">
+  <img alt="OM30 Sistema" src="om30-sistema.png" width="100%">
+</p>
 
-## Installation & updates
+## :rocket: Tecnologias
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- [PHP 7.4](https://php.net/)
+- [Composer](https://getcomposer.org)
+- [Codeigniter 4](https://codeigniter.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://docker.com)
+- [Docker Compose](https://docker.com)
 
-## Setup
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## 💻 Projeto
 
-## Important Change with index.php
+Esse projeto é um sistem  desenvolvido como teste técnico para o processo seletivo de Desenvolvedor Fullstack PHP para OM30.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 💻 Funcionalidades
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+O sistema possui gerenciamento de pacientes onde é possível fazer a listagem, edição, visualização e exclusão dos mesmos.
+Além disso, possui upload de fotos do paciente, paginação, validações de campos com mensagens de erro descritivas e 
+sistema de login simples.
 
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
+O sistema utiliza vários recursos avançados do framework Codeigniter 4 como Migrations, Seeds, Routes, Helpers, Filters, 
+Query Builder, custom validations, templates e pagination.
+ 
+## 📄 Requisitos
 
-## Repository Management
+* PHP 7.3+, Composer, Codeigniter 4, PostgreSQL 10+ e Docker/Docker-Compose
 
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## ⚙️ Instalação e execução
 
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
+**Windows, OS X & Linux:**
 
-## Server Requirements
+Baixe o arquivo zip e o descompacte ou baixe o projeto para sua máquina através do git clone [https://github.com/randercarlos/OM30-Medical.git](https://github.com/randercarlos/OM30-Medical.git)
 
-PHP version 7.2 or higher is required, with the following extensions installed: 
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- Entre no prompt de comando e vá até a pasta do projeto:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+```sh
+cd ir-ate-a-pasta-do-projeto
+```
 
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+- Crie o arquivo .env a partir do arquivo env. As variáveis de ambiente relacionadas ao banco já estão configuradas caso 
+utilize o Docker.
+
+```sh
+copy env .env
+```
+
+- Assumindo que tenha o docker e docker-compose instalado e rodando no PC, execute o comando:
+
+```sh
+docker-compose up -d
+```
+
+- Após os serviços estarem rodando, as dependências já terão sido instaladas. Será necessário rodar as migrations e os seeds. 
+Para rodar as migrations, execute:
+
+```sh
+docker-compose exec app php spark migrate
+```
+
+- E, por último, rode as seeds através do comando:
+
+```sh
+docker-compose exec app php spark db:seed PatientSeeder
+```
+
+- Se tudo foi executado com sucesso, acesse a aplicação na seguinte URL [http://localhost:8000](http://localhost:8000).
+
+- Na tela de login, informar as seguintes credenciais para acessar o sistema: *Email*: admin@admin.com, *Senha*: admin
+
+- Caso não tenha o Docker instalado ou ele não esteja rodando, instale o PHP 7.3+, composer e o postgreSQL 10+ na sua máquina, 
+crie um banco de dados no PostgreSQL, configure a conexão com o banco de dados no arquivo .env e rode os comandos abaixo na pasta raiz do projeto: 
+  
+```sh
+php spark migrate
+php spark db:seed PatientSeeder
+php -S localhost:8000 -t public/
+```
+- Acesse o seguinte endereço  [http://localhost:8000](http://localhost:8000) no navegador para ver o projeto rodando.
+
+- Na tela de login, informar as seguintes credenciais para acessar o sistema: *Email*: admin@admin.com, *Senha*: admin 
+
+
+Desenvolvido por Rander Carlos :wave: [Linkedin!](https://www.linkedin.com/in/rander-carlos-caetano-freitas-308a63a8/)
