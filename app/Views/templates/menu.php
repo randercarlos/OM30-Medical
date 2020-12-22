@@ -1,23 +1,12 @@
-<nav class="navbar navbar-default" style="background-color: #8a1818; font-size: large; ">
+<nav class="navbar navbar-default" style="background-color: #8a1818; font-size: large;">
     <div class="container-fluid">
         <div class="container">
-            <div class="navbar navbar-inverse" style="background-color: #8a1818; border-color: #8a1818;">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                </div>
+
+            <div class="container text-center">
+                <img src="<?= base_url('assets/img/logo-om30.png'); ?>" alt="Logo"
+                     style="width: 150px; height: 120px;margin-top: 25px;" />
             </div>
-            <div class="navbar-header hide">
-                <a class="navbar-brand branco" href="" navbar-brand style="color: #fff;">
-                    <i class="fa fa-home" style="color: #fff;"></i> HOME
-                </a>
-            </div>
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="menu-top">
                     <li class="dropdown">
@@ -27,12 +16,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a id="menu-auto" href="">
+                                <a id="menu-auto" href="/patients">
                                     <i class="fa fa-th-list"></i> Listar Pacientes
                                 </a>
                             </li>
                             <li>
-                                <a id="menu-marca" href="">
+                                <a id="menu-marca" href="/patients/new">
                                     <i class="fa fa-plus-circle"></i> Cadastrar Novo Paciente</a>
                             </li>
                         </ul>
@@ -40,13 +29,9 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a id="menu-logoff" href="">
-                                    <i class="fa fa-power-off"></i> Sair
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="/logout" class="dropdown-toggle text-uppercase" style="color: #fff; font-size: 0.8em;">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i> Sair
+                        </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

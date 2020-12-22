@@ -1,9 +1,7 @@
-<!--@if ($errors->any())-->
-<!--    <div class="alert alert-danger">-->
-<!--        <ul style="list-style-type: none;">-->
-<!--            @foreach($errors->all() as $error)-->
-<!--                <li>{{ $error }}</li>-->
-<!--            @endforeach-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--@endif-->
+<?php if (session()->getFlashdata('errors')) : ?>
+    <div class="alert alert-danger">
+        <?php foreach (session()->getFlashdata('errors') as $field => $error) : ?>
+            <p><?= $error ?></p>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>

@@ -30,9 +30,13 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Patients::index');
-$routes->presenter('patients', ['controller' => 'Patients', 'placeholder' => '(:num)',
-    'websafe' => 1]);
+$routes->get('/login', 'Auth::login');
+$routes->post('/auth', 'Auth::auth');
+$routes->get('/logout', 'Auth::logout');
+
+$routes->addRedirect('/', '/patients');
+$routes->presenter('patients', ['controller' => 'Patients', 'placeholder' => '(:num)', 'websafe' => 1]);
+//$routes->addRedirect('(:any)', '/patients');
 
 /**
  * --------------------------------------------------------------------

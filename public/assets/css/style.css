@@ -100,7 +100,7 @@ footer a, footer a:hover {
 
 #preview-img {
     width: 100px;
-    height: 80px;
+    height: 100px;
 }
 
 .opcionais_grupos {
@@ -111,7 +111,7 @@ footer a, footer a:hover {
 }
 
 /* Adiciona um asterisco vermelho após o label nos campos obrigatórios */
-.form-group label:after, .col-md-2 label.required:after {
+.form-group label.required:after, span.required:after {
   content:"*";
   color:red;
   margin-left: 5px;

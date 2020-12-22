@@ -15,7 +15,7 @@ class CreatePatientsTable extends Migration
             'photo' => ['type' => 'VARCHAR','constraint' => 255, 'null' => true],
             'birthday' => ['type' => 'DATETIME'],
             'cpf' => ['type' => 'VARCHAR', 'constraint' => 14],
-            'cns' => ['type' => 'VARCHAR', 'constraint' => 15],
+            'cns' => ['type' => 'VARCHAR', 'constraint' => 18],
             'address' => ['type' => 'VARCHAR', 'constraint' => 255],
             'number' => ['type' => 'VARCHAR', 'constraint' => 10, 'null' => true],
             'complement' => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => true],
